@@ -1,0 +1,47 @@
+# Default System Configuration for Web Design Multi-Agent Research System
+
+system_mode: "specialized_multi_agent" # Options: generator_only, general_critic, specialized_multi_agent
+
+# Provider / Model Mappings per Agent
+prompt_structurer_provider: "mock" # options: openai, anthropic, mock
+prompt_structurer_model: "gpt-4o-mini"
+
+generator_provider: "mock"
+generator_model: "claude-3-5-sonnet-20241022"
+
+aesthetic_agent_provider: "mock"
+aesthetic_agent_model: "gpt-4o"
+
+accessibility_agent_provider: "mock"
+accessibility_agent_model: "gpt-4o"
+
+usability_agent_provider: "mock"
+usability_agent_model: "gpt-4o"
+
+ethics_agent_provider: "mock"
+ethics_agent_model: "gpt-4o"
+
+originality_agent_provider: "mock"
+originality_agent_model: "gpt-4o"
+
+general_critic_provider: "mock"
+general_critic_model: "gpt-4o"
+
+aggregator_provider: "mock"
+aggregator_model: "gpt-4o"
+
+refiner_provider: "mock"
+refiner_model: "claude-3-5-sonnet-20241022"
+
+# Iteration & Evaluation Gates
+max_iterations: 3
+quality_threshold: 8.0
+cost_limit_usd: 2.00
+time_limit_seconds: 120
+
+# Workspace & Server
+workspace_dir: "./runs"
+database_url: "sqlite:///./runs/research_system.db"
+host: "0.0.0.0"
+port: 8000
+mcp_port: 8001

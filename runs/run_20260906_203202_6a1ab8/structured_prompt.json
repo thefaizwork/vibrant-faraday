@@ -1,0 +1,61 @@
+{
+  "project_goal": "Build a modern website based on: create a portfolio website fro video editign stuff, and my name is faizan ahmad",
+  "website_type": "Interactive Web Platform",
+  "target_users": [
+    "General web users",
+    "Target customer segment"
+  ],
+  "functional_requirements": [
+    "Navigation bar",
+    "Hero section with CTA",
+    "Feature showcase",
+    "Contact/Signup form",
+    "Footer"
+  ],
+  "visual_requirements": [
+    "Harmonious color palette",
+    "Readable typography scale",
+    "Consistent spacing"
+  ],
+  "accessibility_requirements": [
+    "WCAG 2.1 AA compliance",
+    "High contrast",
+    "Alt text on images",
+    "Semantic HTML"
+  ],
+  "usability_requirements": [
+    "Clear navigation",
+    "Prominent CTA",
+    "Intuitive layout"
+  ],
+  "compliance_requirements": [
+    "No dark patterns",
+    "Transparent terms",
+    "Clear privacy practices"
+  ],
+  "originality_requirements": [
+    "Distinct visual identity",
+    "Bespoke component structure"
+  ],
+  "technical_constraints": [
+    "Semantic HTML5",
+    "Responsive CSS3",
+    "Vanilla JavaScript"
+  ],
+  "content_requirements": [
+    "Engaging headline",
+    "Product/Service details",
+    "Clear calls to action"
+  ],
+  "explicit_constraints": [
+    "Fully self-contained in standard HTML/CSS/JS"
+  ],
+  "implicit_requirements": [
+    "Mobile-friendly responsiveness",
+    "Fast rendering"
+  ],
+  "acceptance_criteria": [
+    "Composite score >= 8.0/10",
+    "Zero blocking accessibility or ethics violations"
+  ]
+}

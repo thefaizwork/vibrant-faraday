@@ -1,0 +1,4 @@
+experiment_id,task_id,website_type,system_mode,ablated_agents,run_id,status,iterations,passed_gate,composite_score,aesthetic_score,accessibility_score,usability_score,ethics_score,originality_score,general_score,wcag_pass_rate,dark_pattern_count,total_tokens,estimated_cost_usd,latency_ms,elapsed_sec
+exp_generator_only_20260907_004017,bench_01_sustainable_fashion,E-Commerce,generator_only,,run_20260906_191017_51af44,completed,1,True,0.0,,,,,,,100.0,0,2844,0.004123999999999999,50.1020000083372,0.06
+exp_generator_only_20260907_004017,bench_02_saas_analytics,SaaS Landing Page,generator_only,,run_20260906_191017_ed20be,completed,1,True,0.0,,,,,,,100.0,0,2848,0.004128,19.75300000049174,0.03
+exp_generator_only_20260907_004017,bench_03_healthcare_telemed,Healthcare / Telemedicine,generator_only,,run_20260906_191017_1e93f6,completed,1,True,0.0,,,,,,,100.0,0,2850,0.00413,17.996300011873245,0.03

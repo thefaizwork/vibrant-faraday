@@ -1,0 +1,112 @@
+[
+  {
+    "id": "bench_01_sustainable_fashion",
+    "website_type": "E-Commerce",
+    "prompt": "Create a modern e-commerce website for sustainable fashion with botanical styling, zero-waste disclosures, an interactive impact calculator, and full WCAG AA compliance.",
+    "requirements": [
+      "Responsive hero section with primary shop CTA",
+      "Product catalog with category filter",
+      "Interactive ecological savings calculator",
+      "Transparent policy disclosures and no coercive dark patterns"
+    ]
+  },
+  {
+    "id": "bench_02_saas_analytics",
+    "website_type": "SaaS Landing Page",
+    "prompt": "Build a modern high-conversion SaaS analytics dashboard landing page featuring real-time data visualizers, clear pricing tiers, transparent billing disclosures, and dark/light high contrast harmony.",
+    "requirements": [
+      "Value proposition hero with interactive demo graph",
+      "Transparent tier comparison table without hidden fees",
+      "Customer testimonials with accessible quotes",
+      "Clear call to action with no pre-checked trial agreements"
+    ]
+  },
+  {
+    "id": "bench_03_healthcare_telemed",
+    "website_type": "Healthcare / Telemedicine",
+    "prompt": "Design an accessible patient portal and appointment booking website for a pediatric healthcare clinic with large touch targets, high-contrast readable typography, and privacy-first HIPAA disclosures.",
+    "requirements": [
+      "Simplified accessible appointment scheduling flow",
+      "Emergency contact highlight with keyboard accessibility",
+      "Doctor credentials grid with alt text",
+      "Explicit patient consent and confidentiality notices"
+    ]
+  },
+  {
+    "id": "bench_04_fintech_wealth",
+    "website_type": "Fintech / Wealth Management",
+    "prompt": "Develop an ethical wealth management and micro-investment web platform with compound interest slider calculator, transparent fee breakdowns, and zero high-pressure countdowns.",
+    "requirements": [
+      "Interactive compound interest calculator",
+      "Fee transparency comparison chart",
+      "Regulatory disclosure footer",
+      "High-contrast data tables"
+    ]
+  },
+  {
+    "id": "bench_05_culinary_bistro",
+    "website_type": "Restaurant / Hospitality",
+    "prompt": "Create an artisanal bistro restaurant website with seasonal farm-to-table menu showcase, allergen filter toggles, online table reservation, and rich food typography.",
+    "requirements": [
+      "Filterable menu by dietary preference (vegan, gluten-free)",
+      "Interactive table reservation form with feedback",
+      "Artisanal farm story section",
+      "Accessible location and hours footer"
+    ]
+  },
+  {
+    "id": "bench_06_climate_nonprofit",
+    "website_type": "Non-Profit / NGO",
+    "prompt": "Design a climate action non-profit donation and impact tracking website with live carbon counter, project map showcase, transparent financial audit breakdown, and one-click donation tiers.",
+    "requirements": [
+      "Carbon mitigation metric counter",
+      "Transparent fund allocation infographic",
+      "Donation tier selector with no recurring trickery",
+      "Accessible volunteer signup form"
+    ]
+  },
+  {
+    "id": "bench_07_creative_portfolio",
+    "website_type": "Portfolio / Agency",
+    "prompt": "Build a distinctive, minimalist portfolio website for an architectural design studio featuring asymmetrical gallery layout, smooth project case studies, and accessible lightbox modals.",
+    "requirements": [
+      "Asymmetrical architectural project grid",
+      "Interactive case study drawer/modal",
+      "Studio philosophy manifesto",
+      "Accessible inquiry form"
+    ]
+  },
+  {
+    "id": "bench_08_edtech_academy",
+    "website_type": "EdTech / Online Academy",
+    "prompt": "Construct an interactive online robotics learning platform with curriculum syllabus accordion, course progress simulator, student review cards, and transparent subscription terms.",
+    "requirements": [
+      "Interactive curriculum module accordion",
+      "Course project preview video/interactive sandbox",
+      "Clear pricing with explicit cancellation rights",
+      "Accessible tabbed learning tracks"
+    ]
+  },
+  {
+    "id": "bench_09_municipal_portal",
+    "website_type": "Civic / Public Sector",
+    "prompt": "Design a civic service portal for a smart city with quick service search, waste collection schedule lookup, public meeting notices, and AAA accessibility standards.",
+    "requirements": [
+      "High-contrast civic service search bar",
+      "Accessible weekly municipal calendar",
+      "Emergency notification banner",
+      "Multi-language selector placeholder"
+    ]
+  },
+  {
+    "id": "bench_10_audiophile_sound",
+    "website_type": "Consumer Electronics",
+    "prompt": "Create an immersive, elegant showcase for custom handcrafted open-back audiophile headphones featuring acoustic frequency response curves, materials transparency, and headphone builder widget.",
+    "requirements": [
+      "Interactive acoustic curve visualizer",
+      "Custom headphone material configurator",
+      "Transparent warranty and artisan certification",
+      "Smooth micro-interactions"
+    ]
+  }
+]

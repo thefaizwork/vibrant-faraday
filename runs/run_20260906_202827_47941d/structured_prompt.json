@@ -1,0 +1,85 @@
+{
+  "project_goal": "Showcase Faizan Ahmad's video editing expertise and attract new clients through an engaging, professional portfolio website.",
+  "website_type": "Video Editing Portfolio",
+  "target_users": [
+    "Potential corporate clients seeking commercial video edits",
+    "Independent musicians and bands needing music video production",
+    "Filmmakers and documentary producers looking for post‑production services",
+    "YouTube creators and content creators requiring channel editing",
+    "Creative agencies scouting freelance editors"
+  ],
+  "functional_requirements": [
+    "Responsive hero section with headline, sub‑headline, and CTA button",
+    "Embedded showreel modal with autoplay/pause controls and fallback poster image",
+    "Filterable project grid (e.g., Commercial, Music Video, Documentary, YouTube) with hover overlay preview",
+    "Project detail lightbox featuring before‑after clips, software badges (DaVinci Resolve, Premiere Pro, After Effects), and client testimonial snippet",
+    "Dynamic quote estimator form that captures project type, duration, and budget range",
+    "Contact inquiry form with validation, anti‑spam honeypot, and success confirmation modal",
+    "Integrated Google Maps embed for studio location (optional)",
+    "Social media icon links opening in new tabs",
+    "Sticky back‑to‑top button and smooth scroll navigation"
+  ],
+  "visual_requirements": [
+    "Dark‑moody color palette: #0D0D0D (background), #1F1F1F (cards), #E53935 (accent/red), #FFFFFF (text)",
+    "Bold sans‑serif heading font (e.g., Montserrat Bold) and clean body font (e.g., Inter Regular)",
+    "Generous vertical spacing (64px between sections) and consistent 24px grid gutters",
+    "Card‑style project thumbnails with subtle drop‑shadow and hover scale effect",
+    "Micro‑animations for button hover, modal fade‑in, and grid filter transition"
+  ],
+  "accessibility_requirements": [
+    "WCAG 2.1 AA compliance for contrast ratios, keyboard navigation, and focus indicators",
+    "All images and video thumbnails include descriptive alt text",
+    "ARIA labels for interactive elements (modals, filters, form fields)",
+    "Focus ring visible with at least 3 px thickness and sufficient contrast",
+    "Skip‑to‑content link at top of page"
+  ],
+  "usability_requirements": [
+    "Clear top navigation with sticky header: Home, About, Services, Portfolio, Testimonials, Contact",
+    "Primary CTA (e.g., “Request a Quote”) prominent in hero and sticky footer",
+    "Logical information hierarchy: hero → value proposition → services → portfolio → testimonials → contact",
+    "Form fields grouped logically with inline error messages",
+    "Consistent button styling and placement to guide user flow"
+  ],
+  "compliance_requirements": [
+    "No dark patterns; all consent dialogs are optional and clearly labeled",
+    "Transparent privacy policy link in footer",
+    "Cookie notice complying with GDPR/CCPA if tracking scripts are added later"
+  ],
+  "originality_requirements": [
+    "Custom video‑thumbnail mosaic layout instead of standard grid",
+    "Animated SVG logo reveal on page load",
+    "Unique section divider using subtle motion graphics tied to editing theme"
+  ],
+  "technical_constraints": [
+    "Pure HTML5 markup",
+    "Modular CSS3 using variables and BEM naming convention",
+    "Vanilla JavaScript (ES6+) for interactivity; no frameworks or libraries",
+    "Asset optimization: WebP images, MP4/H.264 video for showreel"
+  ],
+  "content_requirements": [
+    "Hero headline: “Faizan Ahmad – Masterful Video Editing for Visionaries”",
+    "Sub‑headline: “Turning raw footage into cinematic stories that captivate audiences.”",
+    "Value proposition bullet points: “Fast turnaround • Creative storytelling • Industry‑grade color grading”",
+    "Section copy for Services: “Commercials, Music Videos, Documentaries, YouTube Edits – tailored to your brand’s voice.”",
+    "Portfolio section intro: “A curated selection of my recent work.”",
+    "Testimonial snippet format: “[Client Name], [Company] – ‘Faizan delivered beyond expectations…’”",
+    "Contact CTA: “Ready to elevate your project? Get a free quote today.”"
+  ],
+  "explicit_constraints": [
+    "Use only pure HTML5, modular CSS3 variables, and vanilla ES6+ JavaScript as stated in technical constraints."
+  ],
+  "implicit_requirements": [
+    "Responsive design across mobile, tablet, and desktop breakpoints",
+    "Fast page load (<3 seconds on typical 3G connection)",
+    "SEO‑friendly markup: semantic headings, meta descriptions, Open Graph tags",
+    "Smooth micro‑interactions for hover, scroll, and modal actions"
+  ],
+  "acceptance_criteria": [
+    "All listed functional features operate without errors on latest Chrome, Firefox, Safari, and Edge",
+    "WCAG 2.1 AA audit passes with no violations",
+    "Page load time under 3 seconds on a simulated 3G network (Lighthouse score >90)",
+    "Responsive layout passes breakpoint tests at 320 px, 768 px, and 1440 px",
+    "Contact and quote forms submit data and display success confirmation",
+    "Showreel modal plays video smoothly and can be closed with keyboard ESC"
+  ]
+}

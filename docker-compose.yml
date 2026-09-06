@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  web-design-system:
+    build: .
+    container_name: web-design-multi-agent
+    ports:
+      - "8000:8000"
+    environment:
+      - SYSTEM_MODE=specialized_multi_agent
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}
+      - MAX_ITERATIONS=3
+      - QUALITY_THRESHOLD=8.0
+    volumes:
+      - ./runs:/app/runs
+      - ./results:/app/results
+    restart: unless-stopped

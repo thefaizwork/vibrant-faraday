@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multi-Agent Web Design Generation & Research Dashboard</title>
+  <link rel="stylesheet" href="/static/dashboard.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-layout">
+    <!-- Top Navigation Bar -->
+    <header class="navbar">
+      <div class="brand">
+        <div class="logo-icon">✨</div>
+        <div class="brand-text">
+          <h1>Multi-Agent Web Design System</h1>
+          <span class="badge-research">Research Prototype &bull; Closed-Loop Architecture</span>
+        </div>
+      </div>
+      <div class="nav-controls">
+        <a href="/docs" target="_blank" class="nav-link">📖 API Docs</a>
+        <a href="/v1/generate" target="_blank" class="nav-link">⚡ OpenAI Compat</a>
+      </div>
+    </header>
+
+    <div class="main-content">
+      <!-- Left Sidebar: Controls & Prompt Input -->
+      <aside class="sidebar">
+        <div class="card control-card">
+          <h2>🎯 Design Generator</h2>
+          <form id="generate-form">
+            <div class="form-group">
+              <label for="prompt-input">Design Prompt / Requirement</label>
+              <textarea id="prompt-input" rows="4" placeholder="Describe what website you want to build (e.g. 'A video editing portfolio for Alex with showreel and rate calculator', 'A luxury boutique hotel with booking experience', 'A modern AI cybersecurity SaaS', etc.)..." required></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="mode-select">System Architecture Mode</label>
+              <select id="mode-select" class="form-select">
+                <option value="specialized_multi_agent" selected>C. Specialized Multi-Agent (5 Critics + Aggregator + Refiner)</option>
+                <option value="general_critic">B. Single General Critic Baseline</option>
+                <option value="generator_only">A. Generator-Only Baseline (Single Pass)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="framework-select">Frontend Framework & Architecture</label>
+              <select id="framework-select" class="form-select">
+                <option value="vanilla_gsap_lenis" selected>🌐 HTML5 + Modern CSS + GSAP + Lenis + SVGs (Live Sandbox)</option>
+                <option value="nextjs_react">⚛️ React 19 / Next.js 15+ (TypeScript + Tailwind + Framer Motion)</option>
+                <option value="tailwind_gsap">🍃 Tailwind CSS + Alpine.js + GSAP Animations</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="animation-select">Animation & Motion Engine</label>
+              <select id="animation-select" class="form-select">
+                <option value="gsap_lenis" selected>✨ GSAP 3.x + Lenis Smooth Scroll</option>
+                <option value="framer_motion">🎬 Framer Motion Dynamic Transitions</option>
+                <option value="css_svg">🎨 Pure CSS3 Keyframes & Morphing SVGs</option>
+              </select>
+            </div>
+
+            <div class="form-group" id="ablation-group">
+              <label>Agent Ablation (Deactivate Specialists)</label>
+              <div class="ablation-grid">
+                <label class="checkbox-label"><input type="checkbox" value="aesthetic" class="ablate-chk"> Aesthetic</label>
+                <label class="checkbox-label"><input type="checkbox" value="accessibility" class="ablate-chk"> Accessibility</label>
+                <label class="checkbox-label"><input type="checkbox" value="usability" class="ablate-chk"> Usability</label>
+                <label class="checkbox-label"><input type="checkbox" value="ethics" class="ablate-chk"> Ethics</label>
+                <label class="checkbox-label"><input type="checkbox" value="originality" class="ablate-chk"> Originality</label>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group half">
+                <label for="max-iters">Max Iterations</label>
+                <input type="number" id="max-iters" value="3" min="1" max="5" class="form-input">
+              </div>
+              <div class="form-group half">
+                <label for="quality-thresh">Quality Gate (0-10)</label>
+                <input type="number" id="quality-thresh" value="8.0" step="0.5" min="5" max="10" class="form-input">
+              </div>
+            </div>
+
+            <button type="submit" id="generate-btn" class="btn-primary-action">
+              <span>🚀 Launch Multi-Agent Loop</span>
+            </button>
+          </form>
+        </div>
+
+        <!-- Recent Runs Card -->
+        <div class="card runs-card">
+          <h3>🕒 Recent Runs</h3>
+          <div id="runs-list" class="runs-list">
+            <div class="empty-state">No historical runs yet.</div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Right Main Panel: Visual Sandbox & Multi-Agent Telemetry -->
+      <section class="workspace-panel">
+        <!-- Live Run Header & Status Bar -->
+        <div class="run-header card">
+          <div class="run-info">
+            <div class="run-id-tag">Run: <span id="current-run-id">Ready to Generate</span></div>
+            <div class="run-status-badge" id="run-status-badge">Idle</div>
+          </div>
+          <div class="metrics-quickbar" id="metrics-quickbar">
+            <div class="metric-box">
+              <span class="metric-val" id="metric-composite">--</span>
+              <span class="metric-lbl">Composite</span>
+            </div>
+            <div class="metric-box">
+              <span class="metric-val" id="metric-aesthetic">--</span>
+              <span class="metric-lbl">Aesthetic</span>
+            </div>
+            <div class="metric-box">
+              <span class="metric-val" id="metric-accessibility">--</span>
+              <span class="metric-lbl">Accessibility</span>
+            </div>
+            <div class="metric-box">
+              <span class="metric-val" id="metric-usability">--</span>
+              <span class="metric-lbl">Usability</span>
+            </div>
+            <div class="metric-box">
+              <span class="metric-val" id="metric-ethics">--</span>
+              <span class="metric-lbl">Ethics</span>
+            </div>
+            <div class="metric-box">
+              <span class="metric-val" id="metric-originality">--</span>
+              <span class="metric-lbl">Originality</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tabs for View Modes -->
+        <div class="view-tabs">
+          <button class="tab-btn active" data-tab="preview">👁️ Sandboxed Visual Preview</button>
+          <button class="tab-btn" data-tab="critiques">🔍 Specialist Critiques & Gate</button>
+          <button class="tab-btn" data-tab="plan">📋 Aggregated Plan & Diff</button>
+          <button class="tab-btn" data-tab="code">💻 Generated Source Code</button>
+        </div>
+
+        <!-- Tab 1: Visual Sandbox Preview -->
+        <div class="tab-content active" id="tab-preview">
+          <div class="preview-toolbar">
+            <div class="iteration-selector" id="iteration-selector">
+              <button class="iter-btn active" data-iter="final">Final Iteration</button>
+            </div>
+            <div class="viewport-toggles">
+              <button class="view-btn active" data-width="100%">Desktop (100%)</button>
+              <button class="view-btn" data-width="768px">Tablet (768px)</button>
+              <button class="view-btn" data-width="375px">Mobile (375px)</button>
+              <a id="popout-link" href="#" target="_blank" class="view-btn">↗ Pop Out</a>
+            </div>
+          </div>
+          <div class="iframe-container" id="iframe-container">
+            <iframe id="preview-frame" sandbox="allow-scripts allow-same-origin" src="about:blank"></iframe>
+          </div>
+        </div>
+
+        <!-- Tab 2: Specialist Critiques -->
+        <div class="tab-content" id="tab-critiques">
+          <div class="critiques-container" id="critiques-container">
+            <div class="empty-state">Generate a website to inspect specialized agent critiques.</div>
+          </div>
+        </div>
+
+        <!-- Tab 3: Aggregated Plan & Refinement Diff -->
+        <div class="tab-content" id="tab-plan">
+          <div class="plan-container" id="plan-container">
+            <div class="empty-state">No aggregation data available yet.</div>
+          </div>
+        </div>
+
+        <!-- Tab 4: Generated Source Code -->
+        <div class="tab-content" id="tab-code">
+          <div class="code-viewer-container">
+            <div class="code-toolbar" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.75rem;">
+              <div class="code-tabs">
+                <button class="code-tab-btn active" data-code="html">HTML</button>
+                <button class="code-tab-btn" data-code="css">CSS</button>
+                <button class="code-tab-btn" data-code="js">JS (GSAP/Lenis)</button>
+                <button class="code-tab-btn" data-code="react">⚛️ React / Next.js (TSX)</button>
+                <button class="code-tab-btn" data-code="backend">🔌 Backend API & Schema</button>
+              </div>
+              <button id="copy-code-btn" class="btn-outline" style="padding:0.35rem 0.85rem; font-size:0.8rem; border-radius:6px; cursor:pointer;">📋 Copy Code</button>
+            </div>
+            <pre class="code-block"><code id="code-content">// Source code will appear here after generation.</code></pre>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script src="/static/dashboard.js"></script>
+</body>
+</html>
